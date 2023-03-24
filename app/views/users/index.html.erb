@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+<br>
+
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2><b>Account Details</b></h2>
+        </div>
+        <div class="col-sm-6">
+          <a href=<%= edit_user_path(@user.id) %> class="btn btn-info" data-toggle="modal"><i class="material-icons">edit</i> <span>Edit</span></a>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+      <tbody>
+        <% if @user.present? %>
+          <tr>
+            <th>First Name <td><%= @user.first_name %></td> </th>
+          </tr>
+          <tr>
+            <th>Last Name<td><%= @user.last_name %></td></th>
+          </tr>
+          <tr>
+            <th>Email <td><%= @user.email %></td></th>
+          </tr>
+          <tr>
+            <th>Date Of Birth <td><%= @user.date_of_birth %></td></th>
+          </tr>
+          <tr>
+            <th>Country <td><%= @user.country %></td></th>
+          </tr>
+          <tr>
+            <th>Loyalty Points <td><%= @user.loyalty_points %></td></th>
+          </tr>
+        <% else %>
+          <tr>
+            <td colspan='5' class="test-position"> No Records Found</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

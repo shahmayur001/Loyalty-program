@@ -1,0 +1,44 @@
+<br>
+<br>
+
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2><b>Transactions</b></h2>
+        </div>
+        <div class="col-sm-6">
+          <a href="transactions/new" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Create Transaction</span></a>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Transaction Created</th>
+          <th>Points Earned</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @transactions.present? %>
+          <% @transactions.each do |transaction| %>
+            <tr>
+              <td><%= transaction.amount %></td>
+              <td><%= transaction.created_at.strftime('%F') %></td>
+              
+              <td>
+                <%= transaction.amount/100 *10 %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan='3' class="test-position"> No Records Found</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

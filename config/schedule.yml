@@ -1,0 +1,29 @@
+# Running CoffeeRewardsJob at every end of month at 2022-04-30 23:50:00 and next at 2022-05-30 23:50:00
+coffee_rewards_job:
+  cron: "50 23 30 * *"
+  class: "CoffeeRewardsJob"
+  queue: default
+
+# Running MovieRewardsJob at every day at 2022-04-12 23:50:00 and next at 2022-04-13 23:50:00
+movie_rewards_job:
+  cron: "50 23 * * *"
+  class: "MovieRewardsJob"
+  queue: default
+
+# Running CashRebatesJob at every day at 2022-04-12 23:50:00 and next at 2022-04-13 23:50:00
+cash_rebates_job:
+  cron: "50 23 * * *"
+  class: "CashRebatesJob"
+  queue: default
+
+# Running BonusPointsJob at every 3 months at 2022-07-01 23:50:00 and next at 2022-10-01 23:50:00
+bonus_points_job:
+  cron: "50 23 01 */3 *"
+  class: "BonusPointsJob"
+  queue: default
+
+# Running ExpiringLoyaltyPointsJob at every year at 2022-12-30 23:50:00 and next at 2023-12-30 23:50:00
+expiring_loyalty_points_job:
+  cron: "50 23 30 12 *"
+  class: "ExpiringLoyaltyPointsJob"
+  queue: default
